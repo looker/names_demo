@@ -82,7 +82,7 @@ explore: math_functions_median_weighted {
             , num
           FROM (
             SELECT
-              SUM(num) OVER (ORDER BY num) as cumulative_weight
+              SUM(weight) OVER (ORDER BY num) as cumulative_weight
               , weight
               , num
             FROM UNNEST(_pairs_sum_float(a_nums)) a

@@ -1,4 +1,4 @@
-connection: "bigquery_publicdata_standard_sql"
+connection: "bigquery_publicdata"
 include: "*.view.lkml"
 explore: names {
   hidden: yes

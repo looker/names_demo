@@ -19,6 +19,12 @@ view: names {
     drill_fields: [name, state, year, name, number]
   }
 
+  measure: names_count {
+    type: count_distinct
+    sql: ${name} ;;
+    drill_fields: [name, total_number]
+  }
+
   measure: median_year {
     type: number
     sql: MEDIAN_WEIGHTED(ARRAY_AGG(STRUCT(CAST(${year} as FLOAT64) as num, ${number} as weight)));;
